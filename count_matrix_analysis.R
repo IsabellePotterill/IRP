@@ -327,9 +327,10 @@ fill <- "#4271AE"
 ggplot(lenmat, aes(x=L1, y=Length)) + geom_boxplot(fill=fill) +
   scale_y_continuous(trans='log2')
 
-#plot total unique genes for each brain in a scatter plot
+#plot total unique genes for each brain in a bar plot
 uni_lengths <- c(length(brain0uni),length(brain1uni),length(brain2uni),length(brain3uni),length(brain5uni))
 age_brain <- c(65,41,53,72,59)
 age_length <- cbind(age_brain, uni_lengths)
 age_length<-as.data.frame(age_length)
-ggplot(age_length, aes(x=age_brain, y=uni_lengths)) + geom_point() + labs(x="Brain age", y="Number of unique genes")
+ggplot(age_length, aes(x=factor(age_brain), y=uni_lengths)) + geom_bar(stat="identity") + labs(x="Brain age", y="Number of unique genes")
+
