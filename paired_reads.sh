@@ -18,5 +18,9 @@ samtools view oneEndUnmapped.bam | grep -f read_IDs > L1_unmaped_reads.bam
 #get fasta sequence
 cut -f -1,10 L1_unmaped_reads.bam > fasta_att
 
+#create blastdb 'L1_database.fasta' contains the fast file of L1s used
+
+formatdb -t "L1_DATABASE" -i L1_database.fasta -p F -o T
+
 #blast reads against blast database
 blastall -d /lustre/scratch119/casm/team176tv/ip10/local_align/l1_ref/L1_DATABASE/L1_database.fasta -i final.fasta -p blastn -m 8 -o output.blast
