@@ -207,7 +207,7 @@ tot21 <- topgene(topbrainmat21)
 tot20 <- topgene(topbrainmat20)
 tot23 <- topgene(topbrainmat23)
 
-#a function to prepare bar plots of unique expression
+#a function to prepare plots of unique expression
 
 unique_plot<- function(tot){
 p <- ggplot(data=tot, aes(x=rownames(tot), y=Total)) +
@@ -321,7 +321,7 @@ attach(lenmat)
 biserial.cor(Length, L1)
 cor.test(Length, L1) #run correlation test
 
-#plot barplot showing gene length for L1 genes and non-L1 genes
+#plot boxplot showing gene length for L1 genes and non-L1 genes
 lenmat$L1<-as.factor(lenmat$L1)
 fill <- "#4271AE"
 ggplot(lenmat, aes(x=L1, y=Length)) + geom_boxplot(fill=fill) +
