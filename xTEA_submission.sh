@@ -20,6 +20,6 @@ python /nfs/users/nfs_i/ip10/xTEA/gnrt_pipeline_local_v38.pyc -i sample.name.txt
 # run each sh file 
 for sample in SCGC*;do bsub -q normal -G team176 -o n_log3.txt -n 8 -e n_err3.txt -R"select[mem>60000] rusage[mem=60000] span[hosts=1]" -M60000 "sh /lustre/scratch119/casm/team176tv/ip10/xTEA/high_cov_2/$sample/L1/run_xTEA_pipeline.sh";done
 
-#look at output in candidate_disc_filtered_cns.txt
+#look at output in candidate_disc_filtered_cns.txt in file/L1/ for each bam file
 #column headings:
 #chrm refined-pos lclip-pos rclip-pos TSD nalclip narclip naldisc nardisc nalpolyA narpolyA lcov rcov nlclip nrclip nldisc nrdisc nlpolyA nrpolyA lclip-cns-start:end rclip_cns-start:end ldisc-cns-start:end rdisc-cns-start:end Transduction-info ntrsdct-clip ntrsdct-disc ntrsdct-polyA ldisc-same ldisc-diff rdisc-same rdisc-diff 3mer-inversion confidential insertion-length
