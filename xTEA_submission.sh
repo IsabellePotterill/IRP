@@ -6,7 +6,7 @@
 #to put sample names to sample.name.txt file
 #removing .final.bam as well as path to leave identifier e.g. NA12878
 
-ls 24*/DNA/final.bam_GRCh38/*.bam | sed -e 's:\.final.bam::' | sed -e 's:[0-9]*/DNA/final.bam_GRCh38/::' > /lustre/scratch119/casm/team176tv/ip10/xTEA/hg38/sample.name.txt
+ls /lustre/scratch117/casm/team176/rr11/Human-brain-Alzheimer/24*/DNA/final.bam_GRCh38/*.bam | sed -e 's:\.final.bam::' | sed -e 's:/lustre/scratch117/casm/team176/rr11/Human-brain-Alzheimer/[0-9]*/DNA/final.bam_GRCh38/::' > /lustre/scratch119/casm/team176tv/ip10/xTEA/hg38/sample.name.txt
 
 #to put bam list into illumina_bam_list.txt
 #put sample ID and path into bam file e.g. NA12878 /path/na12878_illumina_1_sorted.bam
